@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://stefannysj.github.io/GLHF/sitemap.xml

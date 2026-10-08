@@ -1,0 +1,40 @@
+name: GLHF - Quality checks
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Build candidate
+        run: dotnet publish GLHF.csproj -c Release -o artifacts/publish
+      - name: Structural checks
+        run: python3 tools/qa.py --root . --published artifacts/publish/wwwroot
+      - name: Serve preview
+        run: |
+          python3 -m http.server 8080 --directory artifacts/publish/wwwroot >/tmp/glhf-http.log 2>&1 &
+          echo $! > /tmp/glhf-http.pid
+      - name: Install audit tools
+        run: npm install --no-save --no-package-lock @lhci/cli @axe-core/cli pa11y
+      - name: Lighthouse CI audit
+        continue-on-error: true # initial baseline: tune budgets once measured
+        run: npx lhci autorun --collect.url=http://127.0.0.1:8080 --collect.numberOfRuns=1 --upload.target=temporary-public-storage
+      - name: axe-core accessibility audit
+        run: npx axe http://127.0.0.1:8080 --exit
+      - name: pa11y WCAG2AA
+        run: npx pa11y --standard WCAG2AA http://127.0.0.1:8080
+      - name: lychee links
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: --verbose --no-progress --accept '200..=299,403,429' 'artifacts/publish/wwwroot/**/*.html'
+          fail: true

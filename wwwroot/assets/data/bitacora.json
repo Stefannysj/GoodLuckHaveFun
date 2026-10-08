@@ -1,0 +1,34 @@
+[
+  {
+    "titulo": "Nueva portada editorial de GLHF",
+    "fecha": "2026-10-08",
+    "etiqueta": "mejora",
+    "resumen": "Se prepara una portada con novedades, bitácora y ficha destacada para facilitar la lectura del museo. Esta mejora se encuentra en revisión antes de publicarse.",
+    "imagen": "assets/Logo_GgWp.png",
+    "enlace": "#novedad"
+  },
+  {
+    "titulo": "Colección organizada por eras",
+    "fecha": "2026-10-08",
+    "etiqueta": "mejora",
+    "resumen": "Se incorpora un filtro por períodos históricos a las fichas existentes. El catálogo conserva la selección editorial del archivo.",
+    "imagen": "assets/Logo_GgWp.png",
+    "enlace": "#coleccion"
+  },
+  {
+    "titulo": "Fuentes y accesibilidad más visibles",
+    "fecha": "2026-10-08",
+    "etiqueta": "correccion",
+    "resumen": "Se facilita el acceso a las referencias, al canal para informar errores y a la declaración de accesibilidad. Las auditorías completas siguen pendientes.",
+    "imagen": "assets/Logo_GgWp.png",
+    "enlace": "#accesibilidad"
+  },
+  {
+    "titulo": "Edición histórica del archivo",
+    "fecha": "2026-09-19",
+    "etiqueta": "contenido",
+    "resumen": "El recorrido original documenta siete eras, de 1958 a 2026, con catorce fichas de videojuegos y fuentes consultables.",
+    "imagen": "assets/Logo_GgWp.png",
+    "enlace": "#historia"
+  }
+]
