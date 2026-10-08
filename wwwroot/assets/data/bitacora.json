@@ -1,34 +1,42 @@
 [
   {
     "titulo": "Nueva portada editorial de GLHF",
+    "titulo_en": "New GLHF editorial homepage",
     "fecha": "2026-10-08",
     "etiqueta": "mejora",
-    "resumen": "Se prepara una portada con novedades, bitácora y ficha destacada para facilitar la lectura del museo. Esta mejora se encuentra en revisión antes de publicarse.",
-    "imagen": "assets/Logo_GgWp.png",
+    "resumen": "La portada adopta una composición de bitácora, con más contraste, mejor lectura y navegación adaptable.",
+    "resumen_en": "The homepage adopts a journal layout, with stronger contrast, clearer reading and responsive navigation.",
+    "imagen": "assets/images/bitacora-diseno.svg",
     "enlace": "#novedad"
   },
   {
     "titulo": "Colección organizada por eras",
+    "titulo_en": "Collection organized by era",
     "fecha": "2026-10-08",
     "etiqueta": "mejora",
-    "resumen": "Se incorpora un filtro por períodos históricos a las fichas existentes. El catálogo conserva la selección editorial del archivo.",
-    "imagen": "assets/Logo_GgWp.png",
+    "resumen": "Las fichas históricas se conservan y puedes filtrarlas por periodo para explorar el catálogo con facilidad.",
+    "resumen_en": "Historical records are preserved and can be filtered by era to make the collection easier to explore.",
+    "imagen": "assets/images/bitacora-coleccion.svg",
     "enlace": "#coleccion"
   },
   {
-    "titulo": "Fuentes y accesibilidad más visibles",
+    "titulo": "Navegación y accesibilidad",
+    "titulo_en": "Navigation and accessibility",
     "fecha": "2026-10-08",
     "etiqueta": "correccion",
-    "resumen": "Se facilita el acceso a las referencias, al canal para informar errores y a la declaración de accesibilidad. Las auditorías completas siguen pendientes.",
-    "imagen": "assets/Logo_GgWp.png",
+    "resumen": "Un solo logo visible, controles ES/EN y mejores estados de foco, movimiento reducido y acceso a fuentes.",
+    "resumen_en": "A single visible logo, ES/EN controls, improved focus states, reduced motion and easier access to sources.",
+    "imagen": "assets/images/bitacora-acceso.svg",
     "enlace": "#accesibilidad"
   },
   {
-    "titulo": "Edición histórica del archivo",
+    "titulo": "Archivo histórico de GLHF",
+    "titulo_en": "The GLHF historical archive",
     "fecha": "2026-09-19",
     "etiqueta": "contenido",
-    "resumen": "El recorrido original documenta siete eras, de 1958 a 2026, con catorce fichas de videojuegos y fuentes consultables.",
-    "imagen": "assets/Logo_GgWp.png",
+    "resumen": "Siete eras y catorce fichas documentales que recorren la evolución del videojuego entre 1958 y 2026.",
+    "resumen_en": "Seven eras and fourteen records charting the evolution of video games between 1958 and 2026.",
+    "imagen": "assets/images/bitacora-coleccion.svg",
     "enlace": "#historia"
   }
 ]

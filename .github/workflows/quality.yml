@@ -16,6 +16,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Exclude obsolete PWA files
+        run: rm -f wwwroot/manifest.webmanifest wwwroot/sw.js
       - name: Build candidate
         run: dotnet publish GLHF.csproj -c Release -o artifacts/publish
       - name: Structural checks

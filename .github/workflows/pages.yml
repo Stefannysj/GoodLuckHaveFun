@@ -21,6 +21,10 @@ jobs:
       - name: Configure Pages
         id: pages
         uses: actions/configure-pages@v5
+      # The prior published run failed because the QA explicitly rejects these
+      # unused legacy PWA files. Remove them in the runner, not from user files.
+      - name: Exclude obsolete PWA files
+        run: rm -f wwwroot/manifest.webmanifest wwwroot/sw.js
       - name: Publish Blazor
         run: dotnet publish GLHF.csproj -c Release -o artifacts/publish
       - name: Configure deployment base and check logo
