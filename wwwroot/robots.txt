@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://stefannysj.github.io/GLHF/sitemap.xml
+Sitemap: https://stefannysj.github.io/GoodLuckHaveFun/sitemap.xml

@@ -600,6 +600,20 @@
     }
   };
 
+  // GLHF-STATIC-KEYBOARD-FALLBACK: la lista de eras mantiene su navegacion por teclado.
+  document.addEventListener("keydown", event => {
+    if (dotnet || !["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown", "Home", "End"].includes(event.key)) return;
+    const link = event.target.closest(".era-link");
+    if (!link || !document.querySelector("#era-controls")?.contains(link)) return;
+    let index = eraIds.indexOf(link.dataset.eraLink);
+    if (index < 0) return;
+    event.preventDefault();
+    if (event.key === "Home") index = 0;
+    else if (event.key === "End") index = eraIds.length - 1;
+    else if (event.key === "ArrowUp" || event.key === "ArrowLeft") index = Math.max(0, index - 1);
+    else index = Math.min(eraIds.length - 1, index + 1);
+    scrollToEra(eraIds[index], `[data-era-link`);
+  });
   normalizeFragmentLinks();
   openSource(location.hash);
   initializeTimeline();

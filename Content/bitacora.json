@@ -1,0 +1,72 @@
+[
+  {
+    "titulo": "Nintendo presenta su selección de juegos y eventos de Halloween 2026",
+    "titulo_en": "Nintendo highlights Halloween games and events for 2026",
+    "fecha": "2026-10-09",
+    "etiqueta": "noticia",
+    "resumen": "Nintendo recopila juegos y actividades de octubre para Switch y Switch 2, entre ellas eventos temáticos de temporada. Consulta los detalles en su publicación oficial.",
+    "resumen_en": "Nintendo highlights October games and seasonal activities for Switch and Switch 2. Full details are available in the official announcement.",
+    "imagen": "assets/images/bitacora-coleccion.svg",
+    "enlace": "https://www.nintendo.com/us/whatsnew/dig-up-some-fun-with-great-games-for-halloween-2026/"
+  },
+  {
+    "titulo": "Xbox anuncia los juegos de la semana del 12 al 16 de octubre",
+    "titulo_en": "Xbox details releases scheduled for October 12–16",
+    "fecha": "2026-10-09",
+    "etiqueta": "noticia",
+    "resumen": "Xbox Wire publica su calendario de próximos lanzamientos para consolas Xbox y PC. Incluye Castlevania: Belmont's Curse, previsto para el 15 de octubre; las fechas pueden cambiar.",
+    "resumen_en": "Xbox Wire lists upcoming console and PC releases, including Castlevania: Belmont's Curse scheduled for October 15; dates may change.",
+    "imagen": "assets/images/archivo-portada.svg",
+    "enlace": "https://news.xbox.com/en-us/2026/10/09/next-week-on-xbox-new-games-for-october-12-to-16/"
+  },
+  {
+    "titulo": "PlayStation repasa los lanzamientos de mediados de octubre",
+    "titulo_en": "PlayStation previews mid-October game releases",
+    "fecha": "2026-10-09",
+    "etiqueta": "noticia",
+    "resumen": "El episodio 550 del podcast oficial destaca juegos previstos para PS5, como Ratatan, Planet Zoo 2 y Castlevania: Belmont's Curse. Se trata de fechas anunciadas, sujetas a modificaciones.",
+    "resumen_en": "Official PlayStation Podcast episode 550 previews PS5 releases including Ratatan, Planet Zoo 2 and Castlevania: Belmont's Curse. Release dates may change.",
+    "imagen": "assets/images/bitacora-diseno.svg",
+    "enlace": "https://blog.playstation.com/2026/10/09/official-playstation-podcast-episode-550-now-this-is-podcasting/"
+  },
+  {
+    "titulo": "Nintendo confirma un evento online de Mario Kart World",
+    "titulo_en": "Nintendo announces a Mario Kart World online event",
+    "fecha": "2026-10-08",
+    "etiqueta": "noticia",
+    "resumen": "Nintendo anuncia Mario Kart World Open para los días 17 y 18 de octubre de 2026. Su comunicado detalla requisitos, horario del evento y participación por regiones.",
+    "resumen_en": "Nintendo announces the Mario Kart World Open for October 17–18, 2026, detailing eligibility, requirements and event timing.",
+    "imagen": "assets/images/bitacora-coleccion.svg",
+    "enlace": "https://www.nintendo.com/us/whatsnew/keep-up-the-autumn-momentum-with-the-mario-kart-world-open-oct-2026-event/"
+  },
+  {
+    "titulo": "Xbox Game Pass detalla su primera oleada de octubre",
+    "titulo_en": "Xbox Game Pass announces the first October wave",
+    "fecha": "2026-10-07",
+    "etiqueta": "noticia",
+    "resumen": "Xbox Wire presenta nuevas incorporaciones al catálogo durante octubre, entre ellas Battlefield 6, Valor Mortis y Forever Ago, con detalles sobre plataformás y modalidades de acceso.",
+    "resumen_en": "Xbox Wire outlines October catalog additions including Battlefield 6, Valor Mortis and Forever Ago, with details on platforms and subscription availability.",
+    "imagen": "assets/images/archivo-portada.svg",
+    "enlace": "https://news.xbox.com/en-us/2026/10/07/xbox-game-pass-october-2026-wave-1/amp/"
+  },
+  {
+    "titulo": "PlayStation abre su votación mensual de videojuegos",
+    "titulo_en": "PlayStation opens its monthly games poll",
+    "fecha": "2026-10-05",
+    "etiqueta": "noticia",
+    "resumen": "PlayStation Blog invita a la comunidad a votar por su estreno favorito de septiembre de 2026, con una selección que incluye Marvel's Wolverine y Control Resonant.",
+    "resumen_en": "PlayStation Blog invites players to vote for their favorite September 2026 release, mentioning Marvel's Wolverine and Control Resonant among the candidates.",
+    "imagen": "assets/images/bitacora-acceso.svg",
+    "enlace": "https://blog.playstation.com/2026/10/05/players-choice-vote-for-septembers-best-new-game-4/"
+  },
+  {
+    "titulo": "Nintendo Direct muestra proyectos para Switch 2",
+    "titulo_en": "Nintendo Direct showcases projects for Switch 2",
+    "fecha": "2026-09-09",
+    "etiqueta": "noticia",
+    "resumen": "Nintendo presenta Metroid Ravenous, Kirby and the World Beyond y otras novedades de sus plataformás. Las fechas y contenidos deben verificarse en el comunicado oficial.",
+    "resumen_en": "Nintendo presents Metroid Ravenous, Kirby and the World Beyond and other platform announcements. See the official release for details.",
+    "imagen": "assets/images/bitacora-diseno.svg",
+    "enlace": "https://www.nintendo.com/us/whatsnew/nintendo-direct-reveals-metroid-ravenous-kirby-and-the-world-beyond-and-more-games-for-nintendo-switch-2-and-nintendo-switch/"
+  }
+]

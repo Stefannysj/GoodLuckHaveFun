@@ -6,108 +6,27 @@
   const scriptUrl = document.currentScript?.src || document.querySelector('script[src*="mejoras.js"]')?.src || location.href;
   const pathFromJs = value => new URL(value, scriptUrl).href;
   const legalUrl = name => pathFromJs(`../../${name}.html`);
-  const issueUrl = 'https://github.com/Stefannysj/GLHF/issues/new';
-  const repoUrl = 'https://github.com/Stefannysj/GLHF';
+  const issueUrl = 'https://github.com/Stefannysj/GoodLuckHaveFun/issues/new';
+  const repoUrl = 'https://github.com/Stefannysj/GoodLuckHaveFun';
   const sourceUrl = 'https://www.bnl.gov/about/history/firstvideo.php';
   const motionOff = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const logoUrl = pathFromJs('../Logo_GgWp.png');
   const imgUrl = name => pathFromJs(`../images/${name}.svg`);
   const dateFormat = (value, language) => new Date(`${value}T12:00:00`).toLocaleDateString(language === 'es' ? 'es-PE' : 'en-US', { year:'numeric',month:'short',day:'numeric' });
   const labels = {
-    es: { contenido:'CONTENIDO', mejora:'MEJORA', correccion:'CORRECCIÓN' },
-    en: { contenido:'CONTENT', mejora:'IMPROVEMENT', correccion:'FIX' }
+    es: { contenido:'CONTENIDO', noticia:'NOTICIA', mejora:'MEJORA', correccion:'CORRECCIÓN' },
+    en: { contenido:'CONTENT', noticia:'NEWS', mejora:'IMPROVEMENT', correccion:'FIX' }
   };
-  const dict = {
-    es: {
-      brand:'ARCHIVO DE VIDEOJUEGOS',nav:['Historia','Revoluciones','Colección','Bitácora','Lo que viene'],
-      openMenu:'Abrir menú',closeMenu:'Cerrar menú',langStatus:'Idioma español seleccionado.',
-      heroKicker:'UN MUSEO DIGITAL / 1958—2026',heroTitle:'LA HISTORIA <em>SE JUEGA.</em>',
-      heroText:'Un archivo de ideas, personajes y revoluciones que hicieron de los videojuegos parte de nuestra cultura.',
-      enter:'Entrar a la historia',collection:'Explorar la colección',heroBadge:['07 ERAS','14 FICHAS','UNA HISTORIA EN CONSTANTE REVISIÓN'],
-      featureIndex:'01 / ACTUALIDAD',featureMark:'ENTRADA DESTACADA',featureTag:'NUEVA EDICIÓN',
-      featureHeading:'EL MUSEO SIGUE <em>EN PARTIDA.</em>',
-      featureText:'GLHF abre una nueva etapa editorial: ahora puedes seguir las novedades del archivo, sus mejoras y las piezas que merecen una segunda mirada.',
-      featureButton:'Leer la bitácora',
-      followHeading:'No te pierdas lo que viene.',
-      followText:'Las actualizaciones se documentan en este sitio y en el repositorio público. Sin formularios de suscripción ni correos automáticos.',
-      followButton:'Seguir el proyecto ↗',
-      journalKicker:'CUADERNO DE CAMPO / GLHF',journalTitle:'Entradas más recientes.',
-      journalDesc:'Nuevo contenido, mejoras visuales y correcciones verificables.',
-      loading:'Cargando las entradas del archivo…',blogButton:'Leer actualización',all:'Ver todas',less:'Ver las tres últimas',
-      fallback:'No se pudo consultar el JSON. Se muestran las entradas incluidas con el sitio.',
-      aboutKicker:'SOBRE EL PROYECTO',aboutTitle:'Una historia que merece conservarse.',
-      aboutText1:'GLHF es un museo digital independiente creado por Stefanny para explorar la historia de los videojuegos, desde sus orígenes en laboratorios hasta la actualidad.',
-      aboutText2:'No es un ranking definitivo: las fechas, las imágenes y cada hito se acompañan de contexto y fuentes, para que puedas contrastar la información.',
-      monthKicker:'UNA PIEZA DEL ARCHIVO',monthTitle:'La ficha del mes.',monthTag:'1958 / EL COMIENZO',
-      monthGame:'Tennis for Two',monthText:'Antes de que el videojuego se instalara en las salas arcade, un osciloscopio mostraba una experiencia de tenis interactivo en Brookhaven National Laboratory.',
-      monthSource:'Fuente: Brookhaven National Laboratory, «The First Video Game?» (EN).',
-      monthCredit:'Ilustración original conceptual; no es una fotografía ni una captura del equipo de 1958.',
-      monthButton:'Ver ficha',monthSourceButton:'Consultar fuente (EN) ↗',
-      contactKicker:'EL ARCHIVO ESTÁ ABIERTO',contactTitle:'Escríbenos y cuéntanos qué falta.',
-      contactText:'¿Hay un dato incorrecto o un juego que debería estar aquí? Puedes proponerlo y adjuntar una fuente a través de GitHub Issues. Los mensajes son públicos.',
-      contactButton:'Enviar sugerencia ↗',
-      separator:'CONTINÚA EL RECORRIDO HISTÓRICO',
-      accessibilityKicker:'ACCESIBILIDAD',accessibilityTitle:'Declaración de accesibilidad',
-      accessibilityText:'GLHF incorpora navegación por teclado, foco visible, diseño adaptable y respeto a la preferencia de movimiento reducido. La conformidad con WCAG 2.2 AA todavía no está certificada.',
-      accessibilityLink:'Comunicar una barrera de acceso ↗',
-      filterLabel:'Filtrar colección por era',filterAll:'Todas las eras',filterEmpty:'No hay fichas para este período.',
-      filterCount:count=>`${count} ${count===1?'ficha':'fichas'} disponibles`,
-      footerTag:'MUSEO DIGITAL / 1958—2026',footerLinks:['Historia','Colección','Bitácora','Fuentes','Accesibilidad','Privacidad','Políticas'],
-      footerRights:'© 2026 GLHF. Dirección editorial y desarrollo: Stefanny.',
-      footerCredits:'Imágenes de archivo: sus créditos y licencias figuran junto a cada ficha. Las ilustraciones de la portada son originales.',
-      footerLang:'Las secciones históricas mantienen sus textos originales en español.'
-    },
-    en: {
-      brand:'VIDEO GAME ARCHIVE',nav:['History','Revolutions','Collection','Journal','What’s next'],
-      openMenu:'Open menu',closeMenu:'Close menu',langStatus:'English selected. The historical collection remains in Spanish.',
-      heroKicker:'A DIGITAL MUSEUM / 1958—2026',heroTitle:'HISTORY <em>IS PLAYABLE.</em>',
-      heroText:'An archive of the ideas, characters and revolutions that made video games part of our culture.',
-      enter:'Explore history',collection:'Browse the collection',heroBadge:['07 ERAS','14 RECORDS','AN ARCHIVE IN PROGRESS'],
-      featureIndex:'01 / THE LATEST',featureMark:'FEATURED STORY',featureTag:'NEW EDITION',
-      featureHeading:'THE MUSEUM <em>PLAYS ON.</em>',
-      featureText:'GLHF begins a new editorial chapter. Follow the archive’s updates, design improvements and artifacts worth revisiting.',
-      featureButton:'Read the journal',
-      followHeading:'Stay close to what’s next.',
-      followText:'Updates are documented on this site and in the public repository. No subscription forms or automated newsletters.',
-      followButton:'Follow the project ↗',
-      journalKicker:'FIELD NOTES / GLHF',journalTitle:'Latest entries.',
-      journalDesc:'New content, visual improvements and verifiable fixes.',
-      loading:'Loading archive entries…',blogButton:'Read update',all:'View all',less:'Show latest three',
-      fallback:'The JSON could not be loaded. Showing entries bundled with the site.',
-      aboutKicker:'ABOUT THE PROJECT',aboutTitle:'A story worth preserving.',
-      aboutText1:'GLHF is an independent digital museum created by Stefanny to explore the history of video games, from early lab experiments to the present.',
-      aboutText2:'It is not a definitive ranking: each milestone is presented with context and sources, so readers can verify the facts.',
-      monthKicker:'FROM THE ARCHIVE',monthTitle:'Artifact of the month.',monthTag:'1958 / THE BEGINNING',
-      monthGame:'Tennis for Two',monthText:'Before arcade halls brought games to the masses, an oscilloscope displayed an interactive tennis experience at Brookhaven National Laboratory.',
-      monthSource:'Source: Brookhaven National Laboratory, “The First Video Game?” (EN).',
-      monthCredit:'Original conceptual illustration; not a photograph or screenshot of the 1958 equipment.',
-      monthButton:'See archive record',monthSourceButton:'View source (EN) ↗',
-      contactKicker:'AN OPEN ARCHIVE',contactTitle:'Tell us what is missing.',
-      contactText:'Is a detail incorrect? Should a game be included? Suggest a change with a verifiable source through GitHub Issues. Messages are public.',
-      contactButton:'Submit a suggestion ↗',
-      separator:'CONTINUE TO THE HISTORICAL MUSEUM',
-      accessibilityKicker:'ACCESSIBILITY',accessibilityTitle:'Accessibility statement',
-      accessibilityText:'GLHF supports keyboard navigation, visible focus, responsive layouts and reduced-motion preferences. WCAG 2.2 AA compliance has not yet been independently certified.',
-      accessibilityLink:'Report an accessibility barrier ↗',
-      filterLabel:'Filter collection by era',filterAll:'All eras',filterEmpty:'No archive records for this period.',
-      filterCount:count=>`${count} ${count===1?'record':'records'} available`,
-      footerTag:'DIGITAL MUSEUM / 1958—2026',footerLinks:['History','Collection','Journal','Sources','Accessibility','Privacy','Policies'],
-      footerRights:'© 2026 GLHF. Editorial direction and development: Stefanny.',
-      footerCredits:'Archive images: credits and licenses appear next to each record. Homepage illustrations are original.',
-      footerLang:'Historical chapters remain in Spanish in this edition.'
-    }
-  };
+  const dict = JSON.parse(document.getElementById('glhf-editorial-copy')?.textContent || '{}');
+  if (!dict.es || !dict.en) throw new Error('GLHF: falta Content/editorial.json');
+  dict.es.filterCount = count => `${count} ${count === 1 ? 'ficha' : 'fichas'} disponibles`;
+  dict.en.filterCount = count => `${count} ${count === 1 ? 'record' : 'records'} available`;
   let language = 'es';
   try { language = localStorage.getItem('glhf:language') === 'en' ? 'en' : 'es'; } catch { /* Storage may be blocked. */ }
-  let entries = [];
+  const entries = JSON.parse(document.getElementById('glhf-bitacora-copy')?.textContent || '[]')
+    .filter(x => x && typeof x.titulo === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(x.fecha || '') && typeof x.resumen === 'string')
+    .sort((a, b) => b.fecha.localeCompare(a.fecha));
   let showAll = false;
-  const fallbackEntries = [
-    { titulo:'Nueva portada editorial de GLHF',titulo_en:'New GLHF editorial homepage',fecha:'2026-10-08',etiqueta:'mejora',resumen:'La portada presenta las novedades del museo con lectura más clara y una estética editorial.',resumen_en:'The homepage now introduces museum updates through a clearer editorial layout.',imagen:'assets/images/bitacora-diseno.svg',enlace:'#novedad' },
-    { titulo:'Colección organizada por eras',titulo_en:'Collection organized by era',fecha:'2026-10-08',etiqueta:'mejora',resumen:'El catálogo conserva las fichas históricas y facilita encontrarlas por década.',resumen_en:'The historical collection keeps its records and makes them easier to explore by era.',imagen:'assets/images/bitacora-coleccion.svg',enlace:'#coleccion' },
-    { titulo:'Accesibilidad y fuentes más visibles',titulo_en:'Clearer accessibility and sources',fecha:'2026-10-08',etiqueta:'correccion',resumen:'Mejoras en navegación, enlaces de referencia y participación de visitantes.',resumen_en:'Improvements to navigation, references and visitor feedback.',imagen:'assets/images/bitacora-acceso.svg',enlace:'#accesibilidad' },
-    { titulo:'La primera edición del museo',titulo_en:'The museum’s first edition',fecha:'2026-09-19',etiqueta:'contenido',resumen:'Siete eras, catorce fichas y fuentes históricas que siguen disponibles.',resumen_en:'Seven eras, fourteen records and verifiable historical sources remain available.',imagen:'assets/images/bitacora-coleccion.svg',enlace:'#historia' }
-  ];
-  entries = fallbackEntries;
 
   const oldHeader = document.querySelector('header.site-header');
   const oldHero = document.querySelector('main .hero');
@@ -267,7 +186,7 @@
       const article = document.createElement('article');article.className='glhf-post glhf-reveal glhf-in-view';
       const picture=document.createElement('img');picture.className='glhf-post-image';picture.src=validImage(entry.imagen);
       picture.width=800;picture.height=460;picture.loading='lazy';picture.decoding='async';
-      picture.alt=language==='es'?'Ilustración editorial de la actualización':'Editorial illustration for the update';
+      picture.alt=language==='es' ? `Ilustración conceptual para: ${entry.titulo}` : `Conceptual illustration for: ${entry.titulo_en || entry.titulo}`;
       const body=document.createElement('div');body.className='glhf-post-body';
       const meta=document.createElement('div');meta.className='glhf-post-meta';
       const tag=document.createElement('span');tag.className='glhf-post-tag';tag.textContent=labels[language][entry.etiqueta]||'GLHF';
@@ -293,7 +212,7 @@
         <div class="glhf-shell"><div class="glhf-section-heading"><p class="glhf-kicker">${t.featureIndex}</p><span class="glhf-section-index">GLHF / 2026</span></div>
           <article class="glhf-feature glhf-reveal"><div class="glhf-feature-visual"><span class="glhf-feature-badge">${t.featureMark}</span>
               <img src="${imgUrl('archivo-portada')}" width="1200" height="700" alt="${language==='es'?'Ilustración original: equipo de videojuegos antiguo':'Original illustration: a vintage video game setup'}" fetchpriority="high" decoding="async" /></div>
-            <div class="glhf-feature-copy"><span class="glhf-post-tag">${t.featureTag}</span><time class="glhf-feature-date" datetime="2026-10-08">${dateFormat('2026-10-08',language)}</time>
+            <div class="glhf-feature-copy"><span class="glhf-post-tag">${t.featureTag}</span><time class="glhf-feature-date" datetime="${entries[0]?.fecha || '2026-10-08'}">${dateFormat(entries[0]?.fecha || '2026-10-08',language)}</time>
               <h2 id="featured-title">${t.featureHeading}</h2><p>${t.featureText}</p><a class="glhf-cta glhf-cta--red" href="#bitacora">${t.featureButton}</a></div></article></div>
       </section>
       <aside class="glhf-home glhf-newsstrip" aria-label="${language==='es'?'Seguir novedades':'Follow updates'}"><div class="glhf-shell glhf-newsstrip-inner">
@@ -360,7 +279,7 @@
     // The original historical content is still in Spanish; its elements carry lang=es.
     renderHome();updateFooter();updateFilter();
     const status=header.querySelector('#glhf-language-live');if(status)status.textContent=t.langStatus;
-    document.querySelector('meta[name="theme-color"]')?.setAttribute('content','#f1f2f2');
+    document.querySelector('meta[name="theme-color"]')?.setAttribute('content','#1b2026');
     try{localStorage.setItem('glhf:language',language);}catch{/* Optional preference. */}
   }
   header.querySelectorAll('[data-glhf-lang]').forEach(button=>button.addEventListener('click',()=>{
@@ -368,14 +287,5 @@
     button.focus();
   }));
   updateLanguage(language);
-  const jq=pathFromJs('../data/bitacora.json');
-  if(location.protocol!=='file:') {
-    fetch(jq).then(r=>{if(!r.ok)throw new Error(`HTTP ${r.status}`);return r.json();}).then(data=>{
-      if(!Array.isArray(data))throw new Error('Invalid JSON array');
-      const valid=data.filter(x=>x && typeof x.titulo==='string' && typeof x.fecha==='string' && /^\d{4}-\d{2}-\d{2}$/.test(x.fecha) && typeof x.resumen==='string' && typeof x.etiqueta==='string')
-        .sort((a,b)=>b.fecha.localeCompare(a.fecha));
-      if(valid.length) {entries=valid;renderJournal();}
-    }).catch(e=>console.warn('GLHF: se mantienen las entradas de respaldo.',e));
-  }
   window.matchMedia('(prefers-reduced-motion: reduce)').addEventListener?.('change',observeReveals);
 })();
