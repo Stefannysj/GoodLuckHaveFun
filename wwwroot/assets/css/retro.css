@@ -1,0 +1,133 @@
+/* GLHF: ajuste cromatico gamer. No altera la disposicion original del museo.
+   Mantener alta especificidad porque mejoras.css se anade de forma diferida. */
+html:root {
+  color-scheme: dark;
+  --glhf-paper:#252a30;
+  --glhf-silver:#22282e;
+  --glhf-cloud:#1b2026;
+  --glhf-ink:#f1f3f5;
+  --glhf-muted:#bdc7d0;
+  --glhf-rule:#4a5660;
+  --glhf-red:#e43e45;
+  --glhf-red-dark:#b52735;
+}
+html body.glhf-light { background:#1b2026!important; color:#f1f3f5; }
+html body.glhf-light .glhf-header.site-header {
+  background:rgba(28,33,40,.97)!important;
+  border-bottom:1px solid #45515e!important;
+  box-shadow:0 6px 25px #0006!important;
+}
+html body.glhf-light .glhf-header .brand>span,
+html body.glhf-light .glhf-header .brand {color:#eef2f5!important}
+html body.glhf-light .glhf-header .brand-subtitle {color:#a9b8c6!important}
+html body.glhf-light .glhf-header .main-nav.glhf-menu a {color:#e5edf3!important}
+html body.glhf-light .glhf-header .main-nav.glhf-menu a:hover,
+html body.glhf-light .glhf-header .main-nav.glhf-menu a:focus-visible {background:#37434e;color:#fff!important}
+html body.glhf-light .glhf-lang {background:#303942;border-color:#4c5963}
+html body.glhf-light .glhf-lang button {color:#e5edf3}
+html body.glhf-light .glhf-lang button[aria-pressed=true] {background:#a42c36;color:#fff}
+html body.glhf-light .glhf-menu-toggle {color:#eaf0f2;background:#303942;border-color:#596875}
+html body.glhf-light .glhf-top-hero {
+  background:linear-gradient(150deg,#2a3138,#20262d 55%,#262b34);
+  border-color:#56616d;
+}
+html body.glhf-light .glhf-top-hero::before {
+  background:radial-gradient(circle at 15% 25%,#df364014,transparent 32%),
+    radial-gradient(circle at 90% 80%,#65efff12,transparent 35%),
+    linear-gradient(#e7f3ff08 1px,transparent 1px),
+    linear-gradient(90deg,#e7f3ff08 1px,transparent 1px);
+  background-size:auto,auto,32px 32px,32px 32px;
+  opacity:.8;
+}
+html body.glhf-light .glhf-top-hero h1 {color:#f1f5f7}
+html body.glhf-light .glhf-top-hero .glhf-lead,
+html body.glhf-light .glhf-hero-foot,
+html body.glhf-light .glhf-home .glhf-kicker {color:#bccad5}
+html body.glhf-light .glhf-cta {background:#35404c;color:#fff!important;border-color:#667683}
+html body.glhf-light .glhf-cta:hover {background:#4a5967;box-shadow:0 5px 0 #0f1319}
+html body.glhf-light .glhf-cta--outline {background:transparent;color:#f3f6fa!important;border-color:#8d9cab}
+html body.glhf-light .glhf-cta--red {background:var(--glhf-red);border-color:#fa666b}
+html body.glhf-light .glhf-cta--red:hover {background:var(--glhf-red-dark)}
+html body.glhf-light .glhf-section--white {background:#252a30}
+html body.glhf-light .glhf-section--silver {background:#1d2229}
+html body.glhf-light .glhf-section--gray {background:#252b34}
+html body.glhf-light .glhf-section-heading h2,
+html body.glhf-light .glhf-month-copy h2,
+html body.glhf-light .glhf-about-copy h2,
+html body.glhf-light .glhf-contact-copy h2,
+html body.glhf-light .glhf-feature-copy h2,
+html body.glhf-light .glhf-post h3 {color:#f1f4f7}
+html body.glhf-light .glhf-feature,
+html body.glhf-light .glhf-post {background:#303840;border-color:#5e6b77}
+html body.glhf-light .glhf-feature:hover,
+html body.glhf-light .glhf-post:hover {box-shadow:6px 7px 0 #10151b}
+html body.glhf-light .glhf-feature-badge {background:#212a33;color:#f1f5f7;border-color:#536677}
+html body.glhf-light .glhf-feature-date,
+html body.glhf-light .glhf-post-meta,
+html body.glhf-light .glhf-section-heading>p,
+html body.glhf-light .glhf-section-index,
+html body.glhf-light .glhf-feature-copy p,
+html body.glhf-light .glhf-post p,
+html body.glhf-light .glhf-about-copy p,
+html body.glhf-light .glhf-month-copy p,
+html body.glhf-light .glhf-month-figure figcaption {color:#c7d2db}
+html body.glhf-light .glhf-post-tag {background:#414952;color:#eff3f8;border-color:#65717a}
+html body.glhf-light .glhf-inline-link {color:#ff8f97}
+html body.glhf-light .glhf-inline-link:hover {color:#fff}
+html body.glhf-light .glhf-newsstrip {background:#2d3741;border-color:#52616e}
+html body.glhf-light .glhf-newsstrip p {color:#c5d3df}
+html body.glhf-light .glhf-about-monogram {-webkit-text-stroke-color:#667582}
+html body.glhf-light .glhf-contact-panel {
+  background:linear-gradient(135deg,#28323c,#36414a);
+  border-color:#606f7b;
+}
+html body.glhf-light .glhf-contact-copy p {color:#cbd7de}
+html body.glhf-light .glhf-historical-separator {background:#212931;color:#dae5e9;border-color:#52606e}
+html body.glhf-light .glhf-filter label,
+html body.glhf-light .glhf-filter #glhf-filter-count,
+html body.glhf-light #glhf-no-results {color:#e2e7ed}
+html body.glhf-light .glhf-filter select {background:#2c3640;color:#f3f5f6;border-color:#687583}
+html body.glhf-light .glhf-footer.site-footer {
+  background:#242d36!important;color:#e8edf2!important;border-color:#566673!important;
+  border-top:2px solid #e43e45!important;
+}
+html body.glhf-light .glhf-footer .glhf-footer-wordmark {color:#f2f5f8}
+html body.glhf-light .glhf-footer .glhf-footer-tagline,
+html body.glhf-light .glhf-footer p {color:#c6d2dc!important}
+html body.glhf-light .glhf-footer nav a {color:#e2e9ef!important}
+html body.glhf-light .glhf-footer nav a:hover {color:#ff9ca3!important}
+html body.glhf-light .glhf-footer .glhf-footer-bottom {border-color:#52616f}
+html body.glhf-light .glhf-home a:focus-visible,
+html body.glhf-light .glhf-header a:focus-visible,
+html body.glhf-light .glhf-home button:focus-visible,
+html body.glhf-light .glhf-header button:focus-visible {outline:3px solid #83edf5!important;outline-offset:3px!important}
+/* Ajustes de ancho: conservan las tarjetas y jerarquia original. */
+@media (max-width:890px) {
+  html body.glhf-light .glhf-header .main-nav.glhf-menu {
+    background:#252e37!important;border-color:#566676!important;
+  }
+  html body.glhf-light .glhf-header .main-nav.glhf-menu a {white-space:normal;overflow-wrap:anywhere}
+}
+@media (max-width:480px) {
+  html body.glhf-light .glhf-home .glhf-shell {width:calc(100% - 28px)}
+  html body.glhf-light .glhf-header.site-header {gap:6px;padding-inline:12px!important}
+  html body.glhf-light .glhf-header .brand {gap:7px}
+  html body.glhf-light .glhf-header .brand>span {font-size:19px!important}
+  html body.glhf-light .glhf-hero-actions {gap:10px}
+  html body.glhf-light .glhf-post-body {padding:18px}
+  html body.glhf-light .glhf-section-heading h2 {overflow-wrap:anywhere}
+}
+@media (max-width:350px) {
+  html body.glhf-light .glhf-header .brand-subtitle {font-size:6px!important}
+  html body.glhf-light .glhf-header .brand img {width:32px!important;height:32px!important}
+  html body.glhf-light .glhf-lang button {min-width:34px}
+  html body.glhf-light .glhf-menu-toggle {width:40px}
+}
+@media (prefers-reduced-motion:reduce) {
+  html body.glhf-light .glhf-home *, html body.glhf-light .glhf-home *::before,
+  html body.glhf-light .glhf-home *::after {animation:none!important;transition:none!important}
+}
+/* Los textos de portada utilizan estilos en linea heredados. */
+html body.glhf-light .glhf-month-copy h3,
+html body.glhf-light #accesibilidad h2 {color:#f1f4f7!important}
+html body.glhf-light #accesibilidad p {color:#c4ced8!important}
