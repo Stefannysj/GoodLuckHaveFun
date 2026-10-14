@@ -1,5 +1,7 @@
-name: GLHF - Quality checks
+name: GLHF - Static quality
 on:
+  push:
+    branches: [main]
   pull_request:
     branches: [main]
   workflow_dispatch:
@@ -16,27 +18,26 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Exclude obsolete PWA files
-        run: rm -f wwwroot/manifest.webmanifest wwwroot/sw.js
-      - name: Build candidate
-        run: dotnet publish GLHF.csproj -c Release -o artifacts/publish
-      - name: Structural checks
-        run: python3 tools/qa.py --root . --published artifacts/publish/wwwroot
-      - name: Serve preview
+      - name: Restaurar y compilar
         run: |
-          python3 -m http.server 8080 --directory artifacts/publish/wwwroot >/tmp/glhf-http.log 2>&1 &
-          echo $! > /tmp/glhf-http.pid
-      - name: Install audit tools
-        run: npm install --no-save --no-package-lock @lhci/cli @axe-core/cli pa11y
-      - name: Lighthouse CI audit
-        continue-on-error: true # initial baseline: tune budgets once measured
-        run: npx lhci autorun --collect.url=http://127.0.0.1:8080 --collect.numberOfRuns=1 --upload.target=temporary-public-storage
-      - name: axe-core accessibility audit
-        run: npx axe http://127.0.0.1:8080 --exit
-      - name: pa11y WCAG2AA
-        run: npx pa11y --standard WCAG2AA http://127.0.0.1:8080
-      - name: lychee links
-        uses: lycheeverse/lychee-action@v2
-        with:
-          args: --verbose --no-progress --accept '200..=299,403,429' 'artifacts/publish/wwwroot/**/*.html'
-          fail: true
+          dotnet restore GLHF.csproj
+          dotnet build GLHF.csproj -c Release --no-restore
+      - name: Generar y verificar contenido
+        run: |
+          dotnet run --project GLHF.csproj -c Release --no-build
+          dotnet run --project GLHF.csproj -c Release --no-build -- --verify
+      - name: Revisar sintaxis JavaScript
+        run: |
+          node --check wwwroot/assets/js/site.js
+          node --check wwwroot/assets/js/bootstrap.js
+          node --check wwwroot/assets/js/mejoras.js
+          node --check wwwroot/assets/js/legal.js
+      - name: Comprobar requisitos de publicacion
+        shell: bash
+        run: |
+          test -f artifacts/site/.nojekyll
+          test -f artifacts/site/index.html
+          test -f artifacts/site/assets/css/retro.css
+          test ! -e artifacts/site/_framework
+          test ! -e artifacts/site/sw.js
+          ! grep -R '/GLHF/' artifacts/site --include='*.html' --include='*.js'
